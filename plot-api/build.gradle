@@ -8,12 +8,11 @@ plugins {
     id 'org.jetbrains.kotlin.jvm'
     id 'maven-publish'
     id "signing"
-    id 'org.jetbrains.dokka' version '0.10.0'
+    id 'org.jetbrains.dokka' version '1.4.32'
 }
 
-dokka {
-    outputFormat = 'html'
-    outputDirectory = "$projectDir/../docs/api-reference"
+dokkaHtml.configure {
+    outputDirectory.set(new File(projectDir.getPath() + "/../docs/api-reference"))
 }
 
 dependencies {
